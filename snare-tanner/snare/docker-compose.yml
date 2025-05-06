@@ -1,0 +1,21 @@
+networks:
+  tanner_local:
+    name: docker_tanner_local
+    external: true
+  snare_local:
+
+services:
+
+# Snare service
+  snare:
+    build: .
+    container_name: snare
+    restart: always
+    stop_signal: SIGKILL
+    tty: true
+    networks:
+     - snare_local
+     - tanner_local
+    ports:
+     - "80:80"
+    image: "mushorg/snare:latest"
