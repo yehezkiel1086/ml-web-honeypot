@@ -1,0 +1,5 @@
+sess_uuid,detected_attacks,cluster
+54378fb4-cfdb-4038-95a7-884f04c507ca,Normal,2
+31dc3b6c-7500-46ef-b693-2dd98beb42ad,Normal,0
+96060529-1172-409f-9375-7d5184893fa2,LFI,1
+4db3492d-8906-4698-80f8-f45fd620d10e,Normal,0
