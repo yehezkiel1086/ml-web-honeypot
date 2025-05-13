@@ -9,8 +9,8 @@ import re
 import os
 
 # File paths
-input_log_path = '../datas/tpotche/nikto/tanner.log'
-output_csv_path = '../tanner.csv'
+input_log_path = 'datas/tpotche/nikto/tanner.log'
+output_csv_path = 'tanner.csv'
 
 # Regex to identify the start of a new log entry
 log_line_pattern = re.compile(
