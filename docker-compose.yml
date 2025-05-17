@@ -11,8 +11,8 @@ services:
       MB_DB_TYPE: postgres
       MB_DB_DBNAME: web_honeypot
       MB_DB_PORT: 5432
-      MB_DB_USER: yehezkiel1086
-      MB_DB_PASS: mysecretpassword
+      MB_DB_USER: postgres
+      MB_DB_PASS: admin
       MB_DB_HOST: postgres
     networks:
       - metanet1
@@ -22,15 +22,16 @@ services:
       timeout: 5s
       retries: 5
   postgres:
+    build: ./postgres
     image: postgres:17
     container_name: postgres
     hostname: postgres
     ports:
       - 5432:5432
     environment:
-      POSTGRES_USER: yehezkiel1086
+      POSTGRES_USER: postgres
       POSTGRES_DB: web_honeypot
-      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_PASSWORD: admin
     networks:
       - metanet1
 networks:
