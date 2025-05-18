@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the CSV file
-df = pd.read_csv("tanner_report.csv")
+df = pd.read_csv("detected.csv")
 
 # Table name
 table_name = "web_traffic_logs"
@@ -20,7 +20,8 @@ CREATE TABLE IF NOT EXISTS {table_name} (
     detection_name TEXT,
     detection_type INTEGER,
     user_agent TEXT,
-    referer TEXT
+    referer TEXT,
+    attack_type TEXT
 );
 """
 
