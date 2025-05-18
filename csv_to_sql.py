@@ -21,7 +21,8 @@ CREATE TABLE IF NOT EXISTS {table_name} (
     detection_type INTEGER,
     user_agent TEXT,
     referer TEXT,
-    attack_type TEXT
+    attack_name TEXT,
+    attack_type INTEGER
 );
 """
 
