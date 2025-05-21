@@ -7,7 +7,7 @@ python script to convert tanner json log file to csv
 import json
 import csv
 
-input_json_path = 'datas/dedicated/nikto/tanner_report.json'
+input_json_path = 'datas/tanner_report.json'
 output_csv_path = 'tanner_report.csv'
 
 def flatten_record(record):
