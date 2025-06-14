@@ -19,12 +19,13 @@ regex_patterns = {
 }
 
 # === File paths ===
-file_name = "tanner_report.json"
+input_file = "tanner_report.json"
+output_file = "detected.json"
 
 # === Process entries and apply detection ===
 detected_data = []
 
-with open(file_name, "r") as f:
+with open(input_file, "r") as f:
     for line in f:
         try:
             entry = json.loads(line)
@@ -46,9 +47,9 @@ with open(file_name, "r") as f:
         except json.JSONDecodeError:
             continue  # Skip invalid JSON lines
 
-with open(file_name, "w") as f:
+with open(output_file, "w") as f:
     for entry in detected_data:
         json.dump(entry, f)
         f.write("\n")
 
-print(f"Updated detections saved to: {file_name}")
+print(f"Updated detections saved to: {output_file}")
