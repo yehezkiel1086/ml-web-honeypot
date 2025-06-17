@@ -30,6 +30,8 @@ COPY ./vps/assoc_rules_paths.sql ./vps
 COPY ./vps/assoc_rules_paths_large.sql ./vps
 COPY ./vps/web_traffic_logs.sql ./vps
 
+COPY ./create_db.sql .
+
 COPY ./insert_datas.sh .
 RUN chmod +x ./insert_datas.sh
 
