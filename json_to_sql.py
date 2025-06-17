@@ -1,8 +1,7 @@
 import pandas as pd
 
 # Load tanner_report.json menggunakan Pandas
-# df = pd.read_json("datas/vps/tanner_report.json", lines=True)
-df = pd.read_json("detected.json", lines=True)
+df = pd.read_json("datas/vps/detected.json", lines=True)
 
 # Nama Tabel
 table_name = "web_traffic_logs"

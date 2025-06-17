@@ -20,7 +20,7 @@ regex_patterns = {
 
 # === File paths ===
 input_file = "datas/vps/tanner_report.json"
-output_file = "detected.json"
+output_file = "datas/vps/detected.json"
 
 # === Process entries and apply detection ===
 detected_data = []
