@@ -19,7 +19,7 @@ regex_patterns = {
 }
 
 # === File paths ===
-input_file = "tanner_report.json"
+input_file = "datas/vps/tanner_report.json"
 output_file = "detected.json"
 
 # === Process entries and apply detection ===
