@@ -1,10 +1,13 @@
 import pandas as pd
 
 # Load tanner_report.json menggunakan Pandas
+# df = pd.read_json("datas/vps/tanner_report.json", lines=True)
 df = pd.read_json("datas/vps/detected.json", lines=True)
 
 # Nama Tabel
-table_name = "web_traffic_logs"
+# table_name = "web_traffic_logs_raw"
+table_name = "web_traffic_logs_preprocessed"
+output_file=  table_name + ".sql"
 
 # Definisi Skema PostgreSQL
 create_table = f"""
@@ -69,8 +72,8 @@ for _, row in df.iterrows():
         print(f"Beris dilompati karena error: {e}")
 
 # Konversi ke dalam file berbasis sql
-with open("insert.sql", "w") as f:
+with open(output_file, "w", encoding="utf-8") as f:
     f.write(create_table.strip() + "\n\n")
     f.write("\n".join(insert_statements))
 
-print(f"Total insert statement PostgreSQL yang berhasil ditulis ke 'insert.sql': {len(insert_statements)}")
+print(f"Total insert statement PostgreSQL yang berhasil ditulis ke '{output_file}': {len(insert_statements)}")
