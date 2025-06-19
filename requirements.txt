@@ -3,6 +3,9 @@ pandas
 ipykernel==6.29.5
 pg8000==1.31.2 
 python-dotenv==1.1.0
-py-dateutil
+python-dateutil
 mlxtend
 psycopg2
+memory-profiler
+matplotlib
+seaborn
