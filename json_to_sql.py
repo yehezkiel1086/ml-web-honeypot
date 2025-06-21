@@ -1,6 +1,6 @@
 import pandas as pd
 
-# Load tanner_report.json menggunakan Pandas
+# Load tanner_report.json
 # df = pd.read_json("datas/vps/tanner_report.json", lines=True)
 df = pd.read_json("datas/vps/detected.json", lines=True)
 
@@ -27,11 +27,10 @@ CREATE TABLE IF NOT EXISTS {table_name} (
 );
 """
 
-# Prepare insert statements
+# Buat statement insert sql
 insert_statements = []
 for _, row in df.iterrows():
     try:
-        # Ekstraksi berbagai fields pada tanner_report.json
         ip = row["peer"]["ip"]
         port = row["peer"]["port"]
         sess_uuid = row.get("cookies", {}).get("sess_uuid") or row.get("response_msg", {}).get("response", {}).get("message", {}).get("sess_uuid")
@@ -50,6 +49,7 @@ for _, row in df.iterrows():
             else:
                 return f"'{str(val).replace('\'', '\'\'')}'"
 
+        # konversi ke string sql
         values = [
             sql_str(row["timestamp"]),
             sql_str(row["method"]),

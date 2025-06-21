@@ -1,11 +1,12 @@
-scikit-learn==1.6.1
+mlxtend
 pandas
+psycopg2
 ipykernel==6.29.5
+
+scikit-learn==1.6.1
 pg8000==1.31.2 
 python-dotenv==1.1.0
 python-dateutil
-mlxtend
-psycopg2
 memory-profiler
 matplotlib
 seaborn
